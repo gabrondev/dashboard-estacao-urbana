@@ -77,11 +77,6 @@ async function checkDeviceStatus() {
             // Converte a diferença para minutos
             const timeDifferenceInMinutes = timeDifference / (60 * 1000);
 
-            console.log("Hora atual (em ms):", now);
-            console.log("dataTime (em ms):", dateTime);
-            console.log("Diferença em milissegundos:", timeDifference);
-            console.log("Diferença em minutos:", timeDifferenceInMinutes);
-
             const statusIndicator = document.getElementById('statusIndicator');
             const statusText = document.getElementById('statusText');
             const statusCircle = document.getElementById('statusCircle');
