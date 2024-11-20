@@ -212,8 +212,8 @@ function fetchRealtimeData() {
         .catch(console.error); // Tratar erro de requisição
 }
 
-
-
+// Atualiza os dados a cada 1 minuto (60000 milissegundos)
+setInterval(fetchRealtimeData, 60000);
 
 // Função para converter Unix time para formato DD/MM/YYYY HH:MM
 function formatDate(timestamp) {
