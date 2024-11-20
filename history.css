@@ -1,0 +1,126 @@
+/* Estilos gerais */
+* {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo em vez de no centro */
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+h3 {
+    margin: 0 0 15px 0;
+}
+
+/* Contêiner do histórico */
+#historico {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px; /* Define um limite de largura */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Permite rolagem horizontal em tabelas grandes */
+    margin: 20px auto;
+}
+
+#historico table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Ajusta largura das colunas conforme o conteúdo */
+    margin-bottom: 12px;
+}
+
+#historico th, #historico td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    text-overflow: ellipsis;
+}
+
+#historico th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#historico td {
+    word-wrap: break-word; /* Garante quebra de palavras em texto longo */
+}
+
+/* Botões */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#backToDashboard {
+    width: 100%;
+    max-width: 200px;
+    align-self: center;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    #historico {
+        padding: 10px;
+        margin: 15px;
+    }
+
+    h3 {
+        font-size: 18px; /* Diminui o tamanho do título */
+    }
+
+    #historico table {
+        font-size: 12px; /* Ajusta o tamanho da tabela em telas menores */
+    }
+
+    #backToDashboard {
+        width: 100%;
+        max-width: 180px;
+        font-size: 12px; /* Reduz o tamanho do botão */
+    }
+}
+
+@media (max-width: 480px) {
+    #historico table {
+        font-size: 10px; /* Diminui ainda mais o tamanho da tabela */
+    }
+
+    h3 {
+        font-size: 16px; /* Ajusta o tamanho do título */
+    }
+
+    #backToDashboard {
+        max-width: 150px;
+    }
+}

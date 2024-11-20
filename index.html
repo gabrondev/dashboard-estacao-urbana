@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação Urbana</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Cabeçalho com título e relógio -->
+        <header class="header">
+            <div class="title">Estação Urbana</div>
+            <div id="statusIndicator" class="status-indicator">
+                <div id="statusCircle" class="status-circle"></div>
+                <span id="statusText" class="status-text"></span>
+            </div>
+            <div id="clock" class="clock">00:00:00</div>
+        </header>
+
+        <!-- Primeira linha: Temperatura, Clima, Som -->
+        <div class="line">
+            <div class="widget" id="temperatura">
+                <h3>Temperatura</h3>
+                <div class="temperature-circle">
+                    <i id="temperatureIcon" class="fas"></i>
+                    <p id="currentTemperature">Carregando...</p>
+                </div>
+            </div>
+            <div class="widget" id="chuva">
+                <h3 style="color: #fff;">Clima</h3>
+                <p id="chuvaStatus"><i id="chuvaIcon" class="fas"></i> Carregando...</p>
+            </div>
+            <div class="widget" id="som">
+                <h3 style="margin-bottom: 0;">Nível de Som</h3>
+                <div id="soundLevelBars">
+                    <div class="sound-bar"></div>
+                    <div class="sound-bar"></div>
+                    <div class="sound-bar"></div>
+                    <div class="sound-bar"></div>
+                    <div class="sound-bar"></div>
+                </div>
+                <p id="soundStatus">Baixo</p>
+            </div>
+            <div class="widget">
+                <h3 style="position: relative;">
+                    Qualidade do Ar
+                    <!-- Botão de ajuda no canto superior direito -->
+                    <button id="helpButton" class="help-button" title="O que isso significa?">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                </h3>
+                <p id="poeira" style="font-size: 18px; margin-top: 30px;"></p>
+                <!-- Tooltip oculto -->
+                <div id="tooltip" class="tooltip">
+                    <strong>Sobre PM10 e PM2.5:</strong><br>
+                    - <strong>PM10</strong>: Partículas maiores, como poeira, pólen.<br>
+                    - <strong>PM2.5</strong>: Partículas menores, mais nocivas, como fumaça.<br>
+                    Valores baixos indicam boa qualidade do ar.
+                </div>
+            </div>                   
+        </div>
+
+        <!-- Segunda linha: Últimas Leituras, QR Code e espaço em branco -->
+        <div class="line">
+            <div class="widget" id="historico">
+                <h3>Últimas Leituras</h3>
+                <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Temperatura</th>
+                            <th>Som</th>
+                            <th>Qual. do Ar</th>
+                            <th>Clima</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Leituras serão inseridas aqui -->
+                    </tbody>
+                </table>
+            </div>
+                <button id="verHistorico">Ver Histórico Completo</button>
+            </div>
+            <div class="widget">
+                <h3>Acesse o Dashboard</h3>
+                <img src="img/qr_placeholder.png" style="width: 310px; margin-top: 10px;">
+            </div>
+            <div class="widget">
+                <h3>Deixe seu Feedback</h3>
+                <ul id="feedbackList">
+                    <!-- Feedbacks serão carregados aqui -->
+                </ul>
+                <textarea id="feedbackInput" rows="4" placeholder="Digite seu feedback..."></textarea>
+                <button id="submitFeedback">Enviar Feedback</button>
+            </div>
+        </div>
+
+        <!-- Terceira linha: Gráficos -->
+        <div class="line">
+            <div class="widget" id="grafico-temperatura">
+                <h3>Variação de Temperatura</h3>
+                <canvas id="myTemperatureChart" width="400" height="200"></canvas>
+            </div>
+            <div class="widget" id="graficoSom">
+                <h3>Variação de Poluição Sonora</h3>
+                <canvas id="mySoundChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Logo na parte inferior -->
+        <div style="margin: 0 auto;">
+            <img src="/img/bigdogo_logo.png" alt="">
+        </div>
+    </div>
+
+    <!-- Referência ao arquivo JavaScript externo -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

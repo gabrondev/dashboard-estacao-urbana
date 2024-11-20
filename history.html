@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Leituras</title>
+    <link rel="stylesheet" href="history.css">
+    <script type="module" src="history.js" defer></script>
+</head>
+<body>
+    <div id="historico">
+        <div style="display: flex; align-items: center; margin-bottom: 8px;">
+            <h3 style="flex-grow: 1; margin: 0;">Histórico de Leituras</h3>
+            <button id="backToDashboard" style="margin: 0; padding: 10px 20px; font-size: 14px;">Voltar ao Dashboard</button>
+        </div>
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Temperatura (°C)</th>
+                    <th>Nível de Som (dB)</th>
+                    <th>Qualidade do Ar (PM10)</th>
+                    <th>Clima</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As leituras serão carregadas aqui dinamicamente -->
+            </tbody>
+        </table>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+            <button id="prevPage" disabled>← Anterior</button>
+            <span id="currentPage">Página 1</span>
+            <button id="nextPage" disabled>Próxima →</button>
+        </div>
+        
+    </div>
+</body>
+</html>
